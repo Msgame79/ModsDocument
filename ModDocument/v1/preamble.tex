@@ -1,9 +1,21 @@
 \ltjsetparameter{jacharrange={-2}}
 \usepackage{layout}
-\usepackage{luatexja-fontspec}
-\setmainfont{NotoSans.ttf}[Instance=Medium]
-\setmonofont{NotoSansMono.ttf}[Instance=Medium]
-\setmainjfont{NotoSansJP.ttf}[Instance=Medium]
+\usepackage{luatexja-fontspec,titlesec}
+\setmainfont{NotoSansMono-Medium.ttf}[BoldFont=NotoSansMono-SemiBold.ttf]
+\setmainjfont{NotoSansJP-Medium.ttf}[BoldFont=NotoSansJP-SemiBold.ttf]
+\newfontfamily{\sectionfont}[
+UprightFont = {NotoSansMono-Medium.ttf},
+BoldFont = {NotoSansMono-SemiBold.ttf},
+UprightFeatures={ AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}},
+BoldFeatures={ AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}}
+]{NotoSansMono-Medium.ttf}
+\titleformat{\section}
+{\sectionfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\sectionfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\sectionfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\renewcommand*\descriptionlabel[1]{\sectionfont\bfseries #1\hfil}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \setlength{\hoffset}{-0.4in}
 \setlength{\voffset}{-0.6in}
@@ -24,7 +36,6 @@
 \renewcommand{\today}{{\the\year}/{\themonth}/{\theday}}
 \newcommand{\todayen}{{\themonth}-{\theday}-{\the\year}}
 \setcounter{tocdepth}{3}
-\newcommand{\mono}[1]{\texttt{#1}}
 \newcommand{\parr}{\par\hspace{-1\zw}}
 \renewcommand{\jlreqxkanjiskip}{0pt plus 0pt minus 1pt}
 \renewcommand{\thesection}{\textbf{\texttt{\arabic{section}.}}}
