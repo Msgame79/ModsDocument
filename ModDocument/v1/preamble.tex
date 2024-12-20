@@ -3,18 +3,10 @@
 \usepackage{luatexja-fontspec,titlesec}
 \setmainfont{NotoSansMono-Medium.ttf}[BoldFont=NotoSansMono-SemiBold.ttf]
 \setmainjfont{NotoSansJP-Medium.ttf}[BoldFont=NotoSansJP-SemiBold.ttf]
-\newfontfamily{\sectionfont}[
-UprightFont = {NotoSansMono-Medium.ttf},
-BoldFont = {NotoSansMono-SemiBold.ttf},
-UprightFeatures={ AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}},
-BoldFeatures={ AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}}
-]{NotoSansMono-Medium.ttf}
-\titleformat{\section}
-{\sectionfont\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}
-{\sectionfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-{\sectionfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\newfontfamily{\sectionfont}[UprightFont = {NotoSansMono-Medium.ttf},BoldFont = {NotoSansMono-SemiBold.ttf},UprightFeatures={AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}},BoldFeatures={AltFont={{Range="2E80-"9FFF, Font=NotoSansJP-Medium.ttf}}}]{NotoSansMono-Medium.ttf}
+\titleformat{\section}{\sectionfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\sectionfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\sectionfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 \renewcommand*\descriptionlabel[1]{\sectionfont\bfseries \textbullet \hspace{0.15em}#1\hfil}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \setlength{\hoffset}{-0.4in}
