@@ -23,3 +23,5 @@ copy a\* . > nul 2>&1
 rd /s /q a > nul 2>&1
 
 echo 実行完了
+
+pause
